@@ -5,6 +5,9 @@ const refs = {
   userNameInput: document.querySelector("#username-input"),
   userNameError: document.querySelector("#username-error"),
   passwordInput: document.querySelector("#password-input"),
+  loginForm: document.querySelector("#login-form"),
+  submitUsername: document.querySelector("#submit-username"),
+  submitPassword: document.querySelector("#submit-password"),
 };
 // ==========================================
 // TASK-1: Username Validator
@@ -31,4 +34,17 @@ refs.passwordInput.addEventListener("focus", () => {
 });
 refs.passwordInput.addEventListener("blur", () => {
   refs.passwordInput.style.borderColor = "grey";
+});
+// ==========================================
+// TASK-3: Safe Form Submitter
+// ==========================================
+refs.loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const { username, password } = event.currentTarget.elements;
+  const formData = {
+    name: username.value,
+    password: password.value,
+  };
+  console.log(formData);
+  refs.loginForm.reset();
 });
