@@ -38,13 +38,21 @@ refs.passwordInput.addEventListener("blur", () => {
 // ==========================================
 // TASK-3: Safe Form Submitter
 // ==========================================
-refs.loginForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const { username, password } = event.currentTarget.elements;
-  const formData = {
-    name: username.value,
-    password: password.value,
-  };
-  console.log(formData);
+// ~ Version 1
+// refs.loginForm.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   const { username, password } = event.currentTarget.elements;
+//   const formData = {
+//     name: username.value,
+//     password: password.value,
+//   };
+//   console.log(formData);
+//   refs.loginForm.reset();
+// });
+// ~~ Version 2
+refs.loginForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  const formData = new FormData(evt.currentTarget);
+  console.log(Object.fromEntries(formData));
   refs.loginForm.reset();
 });
