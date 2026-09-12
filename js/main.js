@@ -5,6 +5,8 @@ const refs = {
   coordsBox: document.querySelector("#coords-box"),
   coordsText: document.querySelector("#coords-text"),
   menuTitle: document.querySelector("#menu-title"),
+  keyboardInput: document.querySelector("#keyboard-input"),
+  keyLog: document.querySelector("#key-log"),
 };
 
 // ==========================================
@@ -28,4 +30,13 @@ refs.coordsBox.addEventListener("mouseleave", () => {
 refs.menuTitle.addEventListener("contextmenu", (event) => {
   event.preventDefault();
   alert("Custom actions will be here soon!");
+});
+
+// ==========================================
+// TASK 3: "Keypress Logger".
+// ==========================================
+
+refs.keyboardInput.addEventListener("keydown", (event) => {
+  const { key, code } = event;
+  refs.keyLog.textContent = `Key pressed: ${key}, Code: ${code}`;
 });
