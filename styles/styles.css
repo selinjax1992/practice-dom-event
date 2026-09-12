@@ -1,0 +1,19 @@
+.form-container {
+  margin: 20px;
+  font-family: sans-serif;
+}
+
+#username-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+#username-error {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
