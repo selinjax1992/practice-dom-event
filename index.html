@@ -7,5 +7,31 @@
     <script type="module" src="./js/main.js"></script>
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <section>
+      <div class="container">
+        <h2 class="visually-hidden">Car gallery</h2>
+
+        <form class="js-form car-search">
+          <div class="car-group">
+            <input
+              class="car-input"
+              type="text"
+              name="query"
+              placeholder="Пошук"
+            />
+          </div>
+          <div class="car-group">
+            <select class="car-select" name="options">
+              <option value="brand">Марка</option>
+              <option value="model">Модель</option>
+            </select>
+          </div>
+          <button class="car-button" type="submit">Пошук</button>
+        </form>
+
+        <ul class="js-list car-list"></ul>
+      </div>
+    </section>
+  </body>
 </html>
