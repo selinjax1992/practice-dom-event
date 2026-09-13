@@ -1,3 +1,7 @@
+const refs = {
+  gallery: document.querySelector(".js-gallery"),
+};
+
 const pictures = [
   {
     width: 700,
@@ -30,3 +34,15 @@ const pictures = [
     alt: "mountain",
   },
 ];
+
+const createGalleryCard = (item) => {
+  return `<li class="gallery-item">
+  <a href="#">
+    <img src="${item.url}" alt="${item.alt}" width="${item.with}" height="${item.height}">
+  </a>
+</li>`;
+};
+
+const createGallery = pictures.map((item) => createGalleryCard(item)).join("");
+
+refs.gallery.innerHTML = createGallery;
